@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Usuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/SiteSerMae/Inicial');
 });
+
+Route::get('/SiteSerMae/Inicial', 'App\Http\Controllers\UsuariosController@create');
+Route::post('/SiteSerMae/Inicial', 'App\Http\Controllers\UsuariosController@store')->name('cadastro');
